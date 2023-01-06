@@ -14,13 +14,15 @@ function App() {
       setPuppy(data);
       }
     api()
-  }, [Puppydetails]);
+  }, [puppy]);
+
+
 
   return (
     <div className="App">
         {puppy.map((dog: { id: number, name: string, breed: string, birthdate: string }) => (
           <div>
-            <Puppydetails dog={dog}/>
+            <Puppydetails dog={dog} />
           </div>
       ))}
     </div>
