@@ -22,14 +22,24 @@ function App() {
     api()
   }, [puppy]);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // setPuppy((prevState) => {
+    // return {
+    //     ...prevState,
+    //     [e.target.name]: e.target.value
+    // };
+    // })
+    console.log('dog',e.target.value)
+    }
+
   return (
     <div className="App">
       <button onClick={handleClick}>Add new puppy</button>
-      {isShown && <Submit handleClick={handleClick}/>}
+      {isShown && <Submit handleClick={handleClick} handleChange={handleChange}/>}
       <hr/>
       {puppy.map((dog: { id: number, name: string, breed: string, birthdate: string }) => (
         <div>
-          <Puppydetails dog={dog} />
+          <Puppydetails dog={dog} handleChange={handleChange} />
         </div>
       ))}
     </div>
