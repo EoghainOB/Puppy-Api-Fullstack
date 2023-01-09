@@ -1,7 +1,7 @@
 import express = require('express');
 import { Request, Response, Application } from 'express';
 import { dogs } from './db';
-import { dog } from './types';
+import { doggy } from './types';
 const cors = require('cors');
 
 const app: Application = express();
@@ -18,7 +18,7 @@ app.get('/api/puppies', (_req: Request, res: Response) => {
   res.send(dogs);
 });
 
-app.get('/api/puppies/:id', (req: Request<{id: number}>, res: Response<{}, {dog: dog}>) => {
+app.get('/api/puppies/:id', (req: Request<{id: number}>, res: Response<{}, {dog: doggy}>) => {
   if (dogs.some(index => index.id == req.params.id) === false) {
     res
     .send({ message: 'Error - Invalid id' });
@@ -43,7 +43,7 @@ app.post('/api/puppies/', (req: Request, res: Response) : void => {
     return;
   }
   try {
-  const dog: dog = req.body
+  const dog: doggy = req.body
   dogs.push(dog);
   res
     .status(201)
@@ -55,7 +55,7 @@ app.post('/api/puppies/', (req: Request, res: Response) : void => {
   }
 });
 
-app.put('/api/puppies/:id', (req: Request<{id: number}>, res: Response<{}, {updatedPuppy: dog}>) => {
+app.put('/api/puppies/:id', (req: Request<{id: number}>, res: Response<{}, {updatedPuppy: doggy}>) => {
   if (dogs.some(index => index.id == req.params.id) === false) {
     res
     .status(400)
@@ -63,12 +63,11 @@ app.put('/api/puppies/:id', (req: Request<{id: number}>, res: Response<{}, {upda
     return;
   }
   try {
-  const newData: dog = req.body;
+  const newData: doggy = req.body;
   const id = req.params.id -1;
   const findPuppy = dogs.find((index) => index.id == req.params.id);
   const updatedPuppy = {...findPuppy, ...newData};
   dogs.splice(id, 1, updatedPuppy);
-  console.log(dogs);
   res
     .status(201)
     .json(updatedPuppy);
@@ -91,7 +90,6 @@ app.delete('/api/puppies/:id', (req: Request<{id: number}>, res: Response) => {
     dogs.splice(dogDel, 1);
     }
   res
-    .json(dogs)
     .sendStatus(200);
   } catch (err) {
     res

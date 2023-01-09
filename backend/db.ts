@@ -1,6 +1,6 @@
-import { dog } from './types';
+import { doggy } from './types';
 
-export let dogs: dog[] = [
+export let dogs: doggy[] = [
     {
         id: 1,
         breed: 'Flatcoated retriever',

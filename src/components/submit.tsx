@@ -3,20 +3,17 @@ import React from 'react';
 const Submit = ({handleClick}: any) => {
 
   const handleSubmit = (e: { preventDefault: () => void, target: any; }) => {
-    e.preventDefault()  
+    e.preventDefault()
     const data = {
         id: Math.random() * 10,
         name: e.target[0].value,
         breed: e.target[1].value,
         birthdate: e.target[2].value
     }
-    console.log(data)
     fetch('http://localhost:4000/api/puppies', {
         method: 'POST',
         mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
     e.target.reset();
