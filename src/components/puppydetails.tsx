@@ -35,7 +35,7 @@ const Puppydetails = ({dog: {id, name, breed, birthdate}}: Props) => {
 
         {toUpdate && <Update dog={{id, name, breed, birthdate}}/>}
 
-        {isShown && !toUpdate && <button onClick={handleUpdate}>Update</button>}
+        {isShown && !toUpdate && <button onClick={handleUpdate}>Change</button>}
         {isShown && toUpdate && <button onClick={handleUpdate}>OK</button>}
         {isShown && !toUpdate && <button onClick={removeDog}>Remove</button>}
 

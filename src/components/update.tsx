@@ -13,11 +13,13 @@ const Update = ({dog}: Props) => {
             onSubmit={(e: React.SyntheticEvent) => {
                 e.preventDefault();
                 const target = e.target as typeof e.target & {
+                id: { value: number}
                 name: { value: string };
                 breed: { value: string };
                 birthdate: { value: string };
                 };
                 const updatedData = {
+                    id: dog.id,
                     name: target.name.value,
                     breed: target.breed.value,
                     birthdate: target.birthdate.value
@@ -29,10 +31,10 @@ const Update = ({dog}: Props) => {
                 })
             }}
         >
-        <input name='name' defaultValue={dog.name} />
-        <input name='breed' defaultValue={dog.breed} />
-        <input name='birthdate' defaultValue={dog.birthdate} />
-        <button type='submit'>Change</button>
+        <input name='name'/>
+        <input name='breed'/>
+        <input name='birthdate'/>
+        <button type='submit'>Update</button>
         </form>
     </div>
   )
