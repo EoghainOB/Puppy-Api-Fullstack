@@ -5,21 +5,21 @@ import { doggy } from './types';
 import './App.css';
 
 function App() {
-
+  
+  const [isShown, setIsShown] = useState(false);
   const[puppy, setPuppy] = useState<doggy[]>([{
     id: 0,
     name: '',
     breed: '',
     birthdate: '',
   }])
-  const [isShown, setIsShown] = useState(false);
   
   useEffect(() => {
-      const api = async () => {
-      const response = await fetch('http://localhost:4000/api/puppies')
-      const data = await response.json()
-      setPuppy(data);
-      }
+    const api = async () => {
+    const response = await fetch('http://localhost:4000/api/puppies')
+    const data = await response.json()
+    setPuppy(data);
+    }
     api()
   }, [puppy]);
 
