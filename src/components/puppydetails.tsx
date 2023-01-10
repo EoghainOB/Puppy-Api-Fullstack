@@ -32,17 +32,19 @@ const Puppydetails = ({dog: {id, name, breed, birthdate}}: Props) => {
     <div key={id} className='details'>
       <h2>{name}</h2>
       <Gallery dog={{id, name, breed, birthdate}}/>
-      {isShown && <p>Breed: {breed}</p>}
-      {isShown && <p>DOB: {birthdate}</p>}
+      {isShown && <p><b>Breed:</b> {breed}</p>}
+      {isShown && <p><b>DOB:</b> {birthdate}</p>}
 
       {toUpdate && <Update dog={{id, name, breed, birthdate}}/>}
 
+      <div className='buttons'>
       {isShown && !toUpdate && <button onClick={handleUpdate}>Change</button>}
-      {isShown && toUpdate && <button onClick={handleUpdate}>OK</button>}
+      {isShown && toUpdate && <button onClick={handleUpdate}>Done</button>}
       {isShown && !toUpdate && <button onClick={removeDog}>Remove</button>}
 
       {!isShown && !toUpdate && <button onClick={handleClick}>More details</button>}
       {isShown && !toUpdate && <button onClick={handleClick}>Less details</button>}
+      </div>
     </div>
   )
 }

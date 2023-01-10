@@ -31,10 +31,12 @@ const Update = ({dog}: Props) => {
             })
         }}
         >
+        <div className='update'>
         <input type='text' name='name'/>
         <input type='text' name='breed'/>
         <input type='date' name='birthdate'/>
         <button type='submit'>Update</button>
+        </div>
     </form>
     </div>
   )

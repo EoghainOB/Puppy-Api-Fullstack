@@ -33,6 +33,7 @@ function App() {
     <div className="App">
       <Header handleClick={handleClick}/>
       {isShown && <Submit handleClick={handleClick} />}
+      {isShown && <hr/>}
       {puppy.map((dog: { id: number, name: string, breed: string, birthdate: string }) => (
         <div className='list'>
           <Puppydetails dog={dog}/>

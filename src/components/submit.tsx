@@ -19,13 +19,10 @@ function Submit({ handleClick }: any) {
   };
 
   return (
-    <div>
-      <label>Submit new Puppy</label>
+    <div className='submit'>
       <form onSubmit={handleSubmit}>
         <input type='text' placeholder="Puppy Name" />
-        <br />
         <input type='text' placeholder="Puppy Breed" />
-        <br />
         <input type='date' placeholder="Puppy date of birth" />
         <button type="submit">Add</button>
       </form>
