@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { doggy } from '../types';
+import Gallery from './gallery';
 import Update from './update';
 
 export type Props = {
@@ -30,6 +31,7 @@ const Puppydetails = ({dog: {id, name, breed, birthdate}}: Props) => {
   return (
     <div key={id}>
       <h1>{name}</h1>
+      <Gallery dog={{id, name, breed, birthdate}}/>
       {isShown && <p>Breed: {breed}</p>}
       {isShown && <p>DOB: {birthdate}</p>}
 

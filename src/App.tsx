@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Puppydetails from './components/puppydetails';
 import Submit from './components/submit';
+import Gallery from './components/gallery';
 import { doggy } from './types';
 import './App.css';
 

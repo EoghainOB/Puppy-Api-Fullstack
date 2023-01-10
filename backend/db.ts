@@ -3,13 +3,13 @@ import { doggy } from './types';
 export let dogs: doggy[] = [
     {
         id: 1,
-        breed: 'Flatcoated retriever',
+        breed: 'Golden retriever',
         name: 'Teddy',
         birthdate: '2nd January 2020',
     },
     {
         id: 2,
-        breed: 'Golden retriever',
+        breed: 'Golden Retriever',
         name: 'Freddy',
         birthdate: '13th February 2020',
     },
