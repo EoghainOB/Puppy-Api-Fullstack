@@ -17,12 +17,12 @@ const Gallery = ({dog}: Props) => {
     return json;
     }
     fetchData().then(result => {
-    setImage(result.results[2].urls.regular)});
+    setImage(result.results[Math.floor(Math.random() * 11)].urls.regular)});
     }, []);
 
     return (
       <main className="gallery">
-        <img width='600px' src={image}/>
+        <img src={image}/>
       </main>
     );
 }

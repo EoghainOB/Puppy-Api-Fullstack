@@ -29,8 +29,8 @@ const Puppydetails = ({dog: {id, name, breed, birthdate}}: Props) => {
   }
 
   return (
-    <div key={id}>
-      <h1>{name}</h1>
+    <div key={id} className='details'>
+      <h2>{name}</h2>
       <Gallery dog={{id, name, breed, birthdate}}/>
       {isShown && <p>Breed: {breed}</p>}
       {isShown && <p>DOB: {birthdate}</p>}
@@ -43,7 +43,6 @@ const Puppydetails = ({dog: {id, name, breed, birthdate}}: Props) => {
 
       {!isShown && !toUpdate && <button onClick={handleClick}>More details</button>}
       {isShown && !toUpdate && <button onClick={handleClick}>Less details</button>}
-      <hr/>
     </div>
   )
 }

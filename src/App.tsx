@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Puppydetails from './components/puppydetails';
 import Submit from './components/submit';
+import Header from './components/header';
+import Footer from './components/footer';
 import { doggy } from './types';
 import './App.css';
 
@@ -29,14 +31,15 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleClick}>Add new puppy</button>
+      <Header handleClick={handleClick}/>
       {isShown && <Submit handleClick={handleClick} />}
-      <hr/>
       {puppy.map((dog: { id: number, name: string, breed: string, birthdate: string }) => (
-        <div>
+        <div className='list'>
           <Puppydetails dog={dog}/>
+          <hr/>
         </div>
       ))}
+      <Footer />
     </div>
     )
 }

@@ -1,8 +1,13 @@
-import React from 'react'
-
-const Header = () => {
+const Header = ({ handleClick }: any) => {
   return (
-    <div>Header</div>
+    <header>
+      <div>
+        <h1>Puppy API</h1>
+      </div>
+      <div>
+        <button onClick={handleClick}>Add new puppy</button>
+      </div>
+    </header>
   )
 }
 
