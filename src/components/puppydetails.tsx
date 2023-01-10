@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { doggy } from '../types';
 import Gallery from './gallery';
 import Update from './update';
