@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   
   const [isShown, setIsShown] = useState(false);
-  const[puppy, setPuppy] = useState<doggy[]>([{
+  const [puppy, setPuppy] = useState<doggy[]>([{
     id: 0,
     name: '',
     breed: '',
@@ -26,7 +26,7 @@ function App() {
   }, [puppy]);
 
   const handleClick = () => {
-      setIsShown(!isShown)
+    setIsShown(!isShown)
     }
 
   return (

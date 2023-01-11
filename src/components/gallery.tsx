@@ -11,7 +11,7 @@ const Gallery = ({dog}: Props) => {
 
   useEffect(() => {
     const fetchData = async () => { 
-    const query = await dog.breed +' dog'
+    const query = dog.breed +' dog'
     const data = await fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_MY_ACCESS_KEY}`);
     const json = await data.json();
     return json;
