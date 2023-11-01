@@ -1,10 +1,8 @@
 # Puppy Api Fullstack
 
-This project is a full stack application made in React using Typescript. I started by creating a basic API on the backend using a local array and populated it with sample data, in this case dogs (name, breed, DOB). I set up the routes using Express on the backend.
+This project is a full stack application made in `React` using `Typescript`. I started by creating a basic API on the backend using a local array and populated it with sample data, in this case dogs (name, breed, DOB). I set up the routes using `Express` on the backend. The user is able to add new dogs as well as edit the information of the current dogs. The image has been pulled from Unsplash using their API with the 'breed' type being used, to varying success, to pull dog images of the correct type.
 
-For the front end I used React and Typescript. The user is able to add new dogs as well as edit the information of the current dogs. The image has been pulled from Unsplash using their API with the 'breed' type being used, to varying success, to pull dog images of the correct type.
-
-<img width="800" alt=" Puppy-Api-Fullstack" src="https://user-images.githubusercontent.com/110406695/211781776-03d2f572-52c4-4703-9301-cbc06909ae75.png">
+![puppy](https://github.com/EoghainOB/Puppy-Api-Fullstack/assets/110406695/02fcbe4d-1782-4d80-9008-cafc7f8b0089)
 
 <i>This project is made using: </i>
 
